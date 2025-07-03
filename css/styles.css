@@ -3,26 +3,264 @@ body {
 }
 
 /* 👇👇👇 Paste the styles of your Fancy Robot from the "Position it right" assignment here 👇👇👇 */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #21222c;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/*-------------------------------------------*/
+/* my original fancy-robot.css --------------*/
+
+.content-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 70%;
+  margin: 0 auto;
+}
 
 .robot-container {
+  position: absolute;
+  box-sizing: content-box;
+  width: 700px;
+  height: 700px;
+  top: 120px;
+  align-self: center;
+  align-content: center;
+  background-color: #21222c;
 }
 
 .robot-face-shape {
+  justify-self: center;
+  position: relative;
+  width: 500px;
+  height: 450px;
+  border: 7px solid greenyellow;
+  background-image: conic-gradient(#424949, #99a3a4, #515a5a, #2c3e50);
+  border-radius: 50%/15%;
+  animation-name: robot-fabac;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-duration: 0.75s;
+}
+
+@keyframes robot-fabac {
+  0% {
+    background-image: conic-gradient(#424949, #99a3a4, #515a5a, #2c3e50);
+  }
+  25% {
+    background-image: none;
+  }
+  50% {
+    background-image: conic-gradient(#424949, #99a3a4, #515a5a, #2c3e50);
+  }
+  100% {
+    background-image: linear-gradient(#dde7e7, #81b6bb, #171f1f, #26629d);
+  }
 }
 
 .robot-eye-left {
+  position: absolute;
+  left: 100px;
+  margin-top: 85px;
+  width: 75px;
+  height: 80px;
+  border: 5px solid black;
+  background-color: aquamarine;
+  border-radius: 5% 30px;
+  animation-name: robot-LeE;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-duration: 0.75s;
+}
+
+@keyframes robot-LeE {
+  0% {
+    left: 100px;
+    margin-top: 85px;
+    transform: rotate(0deg);
+    background-color: aquamarine;
+  }
+  25% {
+    left: 90px;
+    margin-top: 75px;
+    transform: rotate(10deg);
+    background-color: beige;
+  }
+  75% {
+    left: 80px;
+    margin-top: 70px;
+    transform: rotate(20deg);
+    background-color: aquamarine;
+  }
+  100% {
+    left: 70px;
+    transform: rotate(40deg);
+    background-color: darksalmon;
+  }
+}
+
+.robot-eye-left:hover {
+  border: 8px solid orangered;
+
+  border-radius: 30px 12%;
+  background-color: yellow;
+  transform: rotate(30deg);
 }
 
 .robot-eye-right {
+  position: absolute;
+  right: 100px;
+  top: 90px;
+  width: 75px;
+  height: 80px;
+  border: 7px solid black;
+  background-color: aquamarine;
+  border-radius: 30px 14%;
+  animation-name: robot-riE;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-duration: 8ms;
+}
+
+@keyframes robot-riE {
+  0% {
+    top: 90px;
+    right: 100px;
+  }
+  50% {
+    top: 90px;
+    right: 75px;
+  }
+  100% {
+    top: 60px;
+    right: 90px;
+    background: repeating-radial-gradient(lime, orange 50px);
+  }
+}
+.robot-eye-right:hover {
+  border: 2px solid yellow;
+  background: repeating-radial-gradient(lime, orange 50px);
+}
+
+.robot-ear-left,
+.robot-ear-right {
+  border: 3px solid greenyellow;
 }
 
 .robot-ear-left {
+  position: absolute;
+  /* display: flex; */
+  top: 280px;
+  left: 50px;
+  width: 40px;
+  height: 135px;
+  border-radius: 80px 0px 0px 80px;
+  background-color: green;
+  animation-name: robot-EL;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes robot-EL {
+  0% {
+    top: 280px;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    top: 220px;
+    opacity: 0;
+  }
 }
 
 .robot-ear-right {
+  position: absolute;
+  display: flex;
+  top: 280px;
+  right: 50px;
+  width: 40px;
+  height: 135px;
+  border-radius: 0px 80px 80px 0px;
+  background-color: green;
+  animation-name: robot-ER;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+}
+
+@keyframes robot-ER {
+  0% {
+    top: 280px;
+  }
+  100% {
+    top: 350px;
+  }
+}
+
+.ear:hover {
+  background: repeating-radial-gradient(red, orange);
 }
 
 .robot-nose {
+  position: absolute;
+  /* margin-top: 200px;
+  margin-left: -200px; */
+  left: 215px;
+  top: 175px;
+  height: 21%;
+  width: 3.25em;
+  border: 5px solid green;
+  background-color: red;
+  border-radius: 30px;
+  animation-name: robot-nose1;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-duration: 3s;
+}
+@keyframes robot-nose1 {
+  0% {
+    border: 5px solid green;
+    background-color: red;
+    transform: rotate(0deg);
+    background-image: url(../assets/images/carrot.png);
+    background-repeat: no-repeat;
+    background-size: 130%;
+  }
+  100% {
+    border: 7px solid yellow;
+    background-color: chartreuse;
+    transform: rotate(150deg);
+    background-size: auto;
+  }
+}
+
+.robot-nose:hover {
+  height: 84px;
+  width: 5.25rem;
+  left: 200px;
+  opacity: 0.5;
+  background-image: url(../assets/images/carrot.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .robot-nose:before {
@@ -32,10 +270,195 @@ body {
 }
 
 .robot-teeth {
+  position: absolute;
+  display: flex;
+  bottom: 50px;
+  left: 90px;
+  width: 300px;
+  height: 90px;
+  border-radius: 50px;
+  background-color: black;
+  animation-name: robot-teeth1;
+  animation-iteration-count: infinite;
+  /* animation-fill-mode: forwards; */
+  animation-duration: 1s;
+}
+
+@keyframes robot-teeth1 {
+  0% {
+    background-color: black;
+    transform: scale(1);
+  }
+  50% {
+    background-color: aqua;
+  }
+  100% {
+    background-color: orange;
+    transform: scale(1.25);
+  }
+}
+.robot-teeth:hover {
+  background-color: orange;
+}
+
+.robot-tooth:nth-child(odd) {
+  margin-top: -7px;
+  background-color: black;
+  animation-name: robot-toodd;
+  animation-iteration-count: infinite;
+  /* animation-fill-mode: forwards; */
+  animation-duration: 1s;
+}
+@keyframes robot-toodd {
+  0% {
+    background-color: black;
+    margin-top: -7px;
+  }
+  100% {
+    margin-top: 20px;
+    background-color: #515a5a;
+  }
+}
+
+.robot-tooth:nth-child(even) {
+  margin-top: 20px;
+  background-color: blue;
+  animation-name: robot-toeven;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+@keyframes robot-toeven {
+  0% {
+    background-color: blue;
+    margin-top: 25px;
+  }
+  100% {
+    margin-top: 4px;
+    background-color: ghostwhite;
+  }
+}
+
+.robot-tooth:nth-child(even):hover {
+  background-color: yellowgreen;
 }
 
 .robot-tooth {
+  height: 50px;
+  width: 70px;
 }
 
 .robot-hair-style {
+  box-sizing: content-box;
+  position: absolute;
+  display: flex;
+
+  left: 230px;
+  top: 15px;
+  gap: 20px;
+  width: auto;
+  height: 110px;
+  animation-name: robot-rhs;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+@keyframes robot-rhs {
+  0% {
+    left: 230px;
+  }
+  25% {
+    left: 220px;
+  }
+  75% {
+    left: 260px;
+  }
+  100% {
+    left: 250px;
+    opacity: 0;
+  }
+}
+
+.robot-hair-style:hover {
+  opacity: 0.6;
+}
+
+.robot-hair-one {
+  width: 1.6em;
+  height: 50px;
+  margin-top: 50px;
+  border-radius: 7px;
+  background: linear-gradient(to top, yellow, green, violet);
+  animation-name: robot-ha1;
+  animation-iteration-count: infinite;
+  animation-duration: 0.6s;
+}
+
+@keyframes robot-ha1 {
+  0% {
+    width: 40px;
+  }
+  25% {
+    background: red;
+  }
+  75% {
+    background: grey;
+  }
+  100% {
+    width: 10px;
+    background: blue;
+  }
+}
+
+.robot-hair-two {
+  width: 30px;
+  height: 75px;
+  margin-top: 25px;
+  border-radius: 10px;
+  background: linear-gradient(to top, yellow 8px, green, brown);
+  animation-name: robot-ha2;
+  animation-iteration-count: infinite;
+  animation-duration: 0.6s;
+}
+
+@keyframes robot-ha2 {
+  0% {
+    width: 40px;
+  }
+  25% {
+    background: red;
+  }
+  75% {
+    background: white;
+  }
+  100% {
+    width: 10px;
+    background: blue;
+  }
+}
+
+.robot-hair-three {
+  width: 40px;
+  height: 100px;
+  border-radius: 10px;
+  background: linear-gradient(to top, red, white, blue);
+  animation-name: robot-ha3;
+  animation-iteration-count: infinite;
+  animation-duration: 0.8s;
+}
+
+@keyframes robot-ha3 {
+  0% {
+    width: 40px;
+    background: linear-gradient(to top, red, white, blue);
+  }
+  25% {
+    background: red;
+  }
+  75% {
+    background: white;
+  }
+  100% {
+    width: 10px;
+    background: blue;
+  }
 }
